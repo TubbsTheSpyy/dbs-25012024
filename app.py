@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 
-app = Flask(name)
+app = Flask(__name__)
 
 @app.route("/", methods = ["GET","POST"])
 def index():
@@ -10,5 +10,5 @@ def index():
     else:
         return(render_template("index.html", result = "waiting for rate...."))
 
-if name == "main":
+if __name__ == "__main__":
     app.run(port=3333)
